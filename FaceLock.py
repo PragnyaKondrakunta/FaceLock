@@ -37,7 +37,7 @@ def upload_files(id1):
 
 
 def verify_faces(id1,id2):
-    headers = { 'Ocp-Apim-Subscription-Key' : 'f4601f44831c40c892488f17436dd5cc' }
+    headers = { 'Ocp-Apim-Subscription-Key' : '*********************************************' }
     face_api_url = 'https://westcentralus.api.cognitive.microsoft.com/face/v1.0/verify'
     response= requests.post(face_api_url,headers=headers,json={'faceId1':id1,'faceId2':id2})
     res=response.json()
@@ -56,7 +56,7 @@ def open_door():
 
 
 def detect_faces(url):
-    headers = { 'Ocp-Apim-Subscription-Key' : 'f4601f44831c40c892488f17436dd5cc' }
+    headers = { 'Ocp-Apim-Subscription-Key' : '*******************************************' }
 
     params = {
             'returnFaceId':'true',
@@ -91,8 +91,8 @@ def setangle(angle):
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(3,GPIO.OUT)
-url1 = 'http://res.cloudinary.com/kmit/image/upload/v1522077495/o6blldyfv2w26jh8rb9z.jpg'
-id1=detect_faces(url1)
+vijay = 'http://res.cloudinary.com/kmit/image/upload/v1522077495/o6blldyfv2w26jh8rb9z.jpg'
+id1=detect_faces(vijay)
 pwm = GPIO.PWM(03,50)
 pwm.start(0)
 takepic(id1)
